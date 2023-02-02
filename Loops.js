@@ -40,7 +40,7 @@
 //console.log(ruUrl('yandex')) //ну ты понял
 //console.log(ruUrl('avito'))
 
-//Практическая задача, сам я не допёр, вот решение автора:
+//Практическая задача по созданию собственной функции 'bind', сам я не допёр, вот решение автора:
 function bind(context, fn) {
   return function (...args) {
     fn.apply(context, args)
@@ -57,3 +57,15 @@ function logPerson() {
    bind(person1, logPerson)()
    bind(person2, logPerson)()
 
+
+   //Practice: 
+function adder(n) {
+  return function (num) {
+    return n + num
+  }
+}
+
+const addOne = adder(1)
+const addFive = adder(5)
+
+console.log(addFive(20)) 
