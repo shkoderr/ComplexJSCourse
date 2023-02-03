@@ -65,60 +65,60 @@
 //})
 
 //Всё круто, но у нас опять появилось много уровней вложенности, поэтому сделаем по-другому
-//const p = new Promise((resolve, reject) => {
-//  setTimeout(() => {
-//    console.log('Data is processing...')
-//    const backendData = {
-//      server: 'aws',
-//      port: 2000,
-//      status: 'working',
-//    }
-//    resolve(backendData)
-//  }, 2000)
-//})
+const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('Data is processing...')
+    const backendData = {
+      server: 'aws',
+      port: 2000,
+      status: 'working',
+    }
+    resolve(backendData)
+  }, 2000)
+})
 
-//p
-//  .then((data) => {
-//    return (p2 = new Promise((resolve, reject) => {
-//      //возвращаем новый promise
-//      setTimeout(() => {
-//        data.modified = true
-//        resolve(data)
-//      }, 2000)
-//    }))
-//    //Так как мы в нашем 'then' возвращаем новый промис, мы можем у нашего 'then' вызвать ещё один 'then'
-//  })
-//  .then((clientData) => {
-//    //Также с помощью 'chaining' мы можем передавать модификации в наших данных
-//    clientData.fromPromise = true
-//    return clientData //необязательно возвращать промисы в then, можно возвращать обычные данные и последовательно их модифицировать
-//  })
-//  .then(data => {
-//    console.log('Modified Data has been recieved', data)
-//  })
+p
+  .then((data) => {
+    return (p2 = new Promise((resolve, reject) => {
+      //возвращаем новый promise
+      setTimeout(() => {
+        data.modified = true
+        resolve(data)
+      }, 2000)
+    }))
+    //Так как мы в нашем 'then' возвращаем новый промис, мы можем у нашего 'then' вызвать ещё один 'then'
+  })
+  .then((clientData) => {
+    //Также с помощью 'chaining' мы можем передавать модификации в наших данных
+    clientData.fromPromise = true
+    return clientData //необязательно возвращать промисы в then, можно возвращать обычные данные и последовательно их модифицировать
+  })
+  .then(data => {
+    console.log('Modified Data has been recieved', data)
+  })
 
-//p
-//  .then((data) => {
-//    return (p2 = new Promise((resolve, reject) => {
-//      //возвращаем новый promise
-//      setTimeout(() => {
-//        data.modified = true
-//        resolve(data)
-//        //reject(data) //меняем 'resolve' на 'reject', в данном случае в консоль будет выведена ошибка с данным объекта, переданного в параметр 'reject'
-//      }, 2000)
-//    }))
-//    //Так как мы в нашем 'then' возвращаем новый промис, мы можем у нашего 'then' вызвать ещё один 'then'
-//  })
-//  .then((clientData) => {
-//    //Также с помощью 'chaining' мы можем передавать модификации в наших данных
-//    clientData.fromPromise = true
-//    return clientData //необязательно возвращать промисы в then, можно возвращать обычные данные и последовательно их модифицировать
-//  })
-//  .then(data => {
-//    console.log('Modified Data has been recieved', data)
-//  }) //Промисы удобны в обработке ошибок, для этого мы используем метод 'catch'
-//    .catch(err => console.error('Error: ', err)) //'catch' сработает, если мы передадим в промис 'reject'
-//    .finally(() => console.log('End of the code')) //'finally' выполнится в любом случае в конце кода
+p
+  .then((data) => {
+    return (p2 = new Promise((resolve, reject) => {
+      //возвращаем новый promise
+      setTimeout(() => {
+        data.modified = true
+        resolve(data)
+        //reject(data) //меняем 'resolve' на 'reject', в данном случае в консоль будет выведена ошибка с данным объекта, переданного в параметр 'reject'
+      }, 2000)
+    }))
+    //Так как мы в нашем 'then' возвращаем новый промис, мы можем у нашего 'then' вызвать ещё один 'then'
+  })
+  .then((clientData) => {
+    //Также с помощью 'chaining' мы можем передавать модификации в наших данных
+    clientData.fromPromise = true
+    return clientData //необязательно возвращать промисы в then, можно возвращать обычные данные и последовательно их модифицировать
+  })
+  .then(data => {
+    console.log('Modified Data has been recieved', data)
+  }) //Промисы удобны в обработке ошибок, для этого мы используем метод 'catch'
+    .catch(err => console.error('Error: ', err)) //'catch' сработает, если мы передадим в промис 'reject'
+    .finally(() => console.log('End of the code')) //'finally' выполнится в любом случае в конце кода
 
 
 //Возможности промисов, создадим функцию 'sleep', которая добавляет определённую задержку: 
