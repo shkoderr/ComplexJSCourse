@@ -1,11 +1,11 @@
 //Классы https://www.youtube.com/watch?v=uLY9GXGMXaA&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=7&t=29s
-////const animal = {
-////  name: 'animal',
-////  age: 5,
-////  hasTail: 'true'
-////}
+//const animal = {
+//  name: 'animal',
+//  age: 5,
+//  hasTail: 'true'
+//}
 
-////Теперь создадим наш объект через класс, названия классов всегда пишутся с заглавной буквы
+//Теперь создадим наш объект через класс, названия классов всегда пишутся с заглавной буквы
 //class Animal {
 //  static type = 'ANIMAL'
 
@@ -20,20 +20,20 @@
 //  }
 //}
 
-////const animal = new Animal({
-////  name: 'animal',
-////  age: 5,
-////  hasTail: 'true'
-////})
+//const animal = new Animal({
+//  name: 'animal',
+//  age: 5,
+//  hasTail: 'true'
+//})
 
-////Благодаря классам мы можем создавать полноценное наследование 
+//Благодаря классам мы можем создавать полноценное наследование 
  
-//class Cat extends Animal {
+//class Cat extends Animal {    //extends используется для обозначения родительского класса, от которого мы наследуемся
 //  static type = 'CAT'
 
 //  constructor(options) {        //Чтобы добавить новые свойства для конкретног класса, создаём новый конструктор
 //    super(options)              //Метод 'super' вызывает родительский конструктор (от 'Animal')
-//    this.color = options.color
+//    this.color = options.color  //Таким образом, мы добавили дополнительное свойство 'color' 
 //  }
 
 //  voice() {
@@ -56,7 +56,6 @@
 //  isAwesome: 'true',
 //  color: 'black-white'         //Теперь при вызове объекта cat у него появится новое поле 'color'
 //})
-
 
 
 
