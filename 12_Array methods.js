@@ -37,7 +37,7 @@ const people = [
 //console.log(newPeople)  //выведет в консоль тот же массив, потому что мы итерируем по всему массиву и возвращаем сам объект, т.е. новый массив newPeople
 
 //Метод 'map' хорошо тем, что с помощью него мы можем как угодно преобразовывать наш исходный массив:
-//const newPeople = people.map(person => `${person.name} (${person.age})`) //выведем имена с возрастом
+//const newPeople = people.map(person => `${person.name} (${person.age})`) //получим новый массив с именами и возрастом
 
 //console.log(newPeople) 
 
@@ -58,7 +58,7 @@ const people = [
 
 //Способ с использованием метода 'filter'
 //const adults = people.filter(person => {
-//  if(person.age >= 18) {                     //если возраст э-та больше 18, то возвращается true и элемент попадает в новый массив adults
+//  if(person.age >= 18) {                     //если возраст э-та больше 18, то возвращается true и элемент попадает в новый массив
 //    return true
 //  }
 //})
